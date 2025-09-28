@@ -11,7 +11,7 @@ pip install -r requirements.txt
 
 ### Visual Genome
 
-'''
+```
 BERI
 └───data
 │   └───vg
@@ -21,7 +21,7 @@ BERI
 |       |   val.json
 |       └─  images
  :       :
-'''
+```
 
 ### HICO-DET
 
@@ -38,8 +38,8 @@ BERI
 
 ## Training
 
-python -m torch.distributed.launch --nproc_per_node=2 --use_env main.py --dataset vg --img_folder data/vg/images/ --ann_path data/vg/ --batch_size 2 --output_dir ckpt
+python -m torch.distributed.launch --nproc_per_node=2 --use_env main.py 
 
 ## Evaluation
 
-python -m torch.distributed.launch --nproc_per_node=2 --use_env main.py --dataset vg --img_folder data/vg/images/ --ann_path data/vg/ --batch_size 2 --output_dir ckpt --eval True
+python -m torch.distributed.launch --nproc_per_node=2 --use_env main.py --eval True
